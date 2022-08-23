@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -19,9 +19,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ListadoComponent
   ],
   imports: [
-    CommonModule,
-    FlexLayoutModule,
-    HeroesRoutingModule
+    CommonModule,    
+    HeroesRoutingModule,
+    MaterialModule 
   ]
 })
 export class HeroesModule { }
