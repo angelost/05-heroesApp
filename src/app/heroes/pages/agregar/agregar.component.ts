@@ -81,9 +81,22 @@ heroe: Heroe = {
 
   borrar() {
 
-    this.dialog.open( ConfirmarComponent, {
-      width: '250px'
+    const dialog = this.dialog.open( ConfirmarComponent, {
+      width: '250px',
+      data: this.heroe
     });
+
+    dialog.afterClosed().subscribe(
+      (result) => {
+        
+        if( result ) {
+          this.heroesService.borrarHeroe( this.heroe.id! )
+            .subscribe( resp => {
+              this.router.navigate(['/heroes']);
+            });
+        }
+      }
+    )
 
 
     // this.heroesService.borrarHeroe( this.heroe.id! )
